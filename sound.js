@@ -7,7 +7,7 @@
   const volumeInput=document.querySelector('#sound-volume');
   const effectsInput=document.querySelector('#sound-effects');
   const status=dock.querySelector('.sound-status');
-  let enabled=false,volume=.32,effects=true,context,fxGain,fadeFrame=0,epoch=0;
+  let enabled=false,volume=.32,effects=true,context,fxGain,fadeFrame=0,epoch=0,lastWaterSound=-1000;
   try {
     const saved=JSON.parse(localStorage.getItem('kenny-sound-settings')||'null');
     if(saved&&Number.isFinite(saved.volume))volume=Math.max(0,Math.min(1,saved.volume));
@@ -50,6 +50,7 @@
   function cue(kind='tap'){
     if(!enabled||!effects||!context||context.state!=='running'||document.hidden)return;
     const t=context.currentTime;
+    if(kind==='water'){const o=context.createOscillator(),g=context.createGain();o.type='sine';o.frequency.setValueAtTime(1350,t);o.frequency.exponentialRampToValueAtTime(420,t+.13);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.09,t+.004);g.gain.exponentialRampToValueAtTime(.0001,t+.2);o.connect(g);g.connect(fxGain);o.start(t);o.stop(t+.22);o.onended=()=>{o.disconnect();g.disconnect()};note(880,t+.055,.15,.018);return}
     if(kind==='welcome'||kind==='success'){[523.25,783.99,1046.5].forEach((f,i)=>note(f,t+i*.075,.48,.075));}
     else if(kind==='slide'){note(698.46,t,.18,.065);note(1046.5,t+.065,.25,.045);}
     else {note(659.25,t,.13,.035);note(1318.5,t,.08,.012)}
@@ -75,10 +76,11 @@
   volumeInput.addEventListener('input',()=>{volume=Number(volumeInput.value)/100;save();if(enabled&&!music.paused)fadeTo(volume,100);render()});
   effectsInput.addEventListener('change',()=>{effects=effectsInput.checked;save();render();if(effects)cue('tap')});
   document.addEventListener('click',e=>{
-    if(dock.contains(e.target)||e.target.closest('input,select,textarea'))return;
+    if(dock.contains(e.target)||e.target.closest('input,select,textarea')||performance.now()-lastWaterSound<220)return;
     const control=e.target.closest('button,a,summary');if(!control)return;
     const slide=control.matches('[data-hero-next],[data-hero-prev],[data-wine-next],[data-wine-prev],[data-wine]');cue(slide?'slide':'tap');
   });
+  window.addEventListener('kenny:water-drop',()=>{if(enabled&&effects){lastWaterSound=performance.now();cue('water')}});
   document.querySelector('#booking-form').addEventListener('submit',()=>{if(!document.querySelector('.booking-success').hidden)cue('success')});
   document.addEventListener('visibilitychange',async()=>{
     if(document.hidden){cancelAnimationFrame(fadeFrame);music.pause();music.volume=0;context?.suspend().catch(()=>{});render();}

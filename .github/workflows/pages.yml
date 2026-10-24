@@ -30,7 +30,7 @@ jobs:
       - name: Prepare static website
         run: |
           mkdir -p _site/assets
-          cp index.html style.css app.js sound.js _site/
+          cp index.html style.css app.js sound.js interactions.js _site/
           cp -R assets/. _site/assets/
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5

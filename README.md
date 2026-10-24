@@ -32,9 +32,15 @@ This is a fusion of the selected visual and interaction mechanisms, not a frame-
 - Hover/touch tasting rows, navigation overlay with focus management and FAQ accordion.
 - Five interactive 3D wine bottles, arrows/dots/drag/raycast selection, scroll zoom and motion pause. Static fallback if WebGL is unavailable.
 - Original bear turn controlled by scroll, local Draco-decoded model close-up and brand-colour mask.
+- WhatsApp, Facebook and Instagram floating brand icons. They open a clearly labelled demo contact panel until real accounts are supplied; see `assets/kenny/social-links.json`.
+- Transparent water-height simulation under pointer movement and finger swipes, falling droplets / expanding rings on tap, optional synthesized water sounds, a Canvas 2D fallback, reduced-motion handling and no interception of scrolling/clicks.
 - Local reservation-intent form with validation. No network submission, personal-data persistence or actual reservation.
 - Opt-in background music: an original 52-second piano/bass/brush lounge loop, subtle synthesized interaction cues, mute, volume and effects controls. No audio starts before the user enables it; playback pauses in background tabs. Only volume/effect preferences are stored locally, never automatic sound consent.
 - Reduced-motion mode disables automatic carousel, floating motion, scroll pin durations and background video playback. Offscreen videos and inactive 3D rendering are paused.
+
+## Social account setup
+
+`assets/kenny/social-links.json` has intentionally empty fields because the user requested logo-only demo entries. Set `whatsapp` to an international number (country code, no leading zero; spaces or `+` are accepted), and use complete HTTPS Facebook/Instagram profile URLs in the corresponding fields. Valid settings turn the floating buttons into ordinary external links; no messages are sent automatically. Leaving a field empty keeps the honest demo panel.
 
 ## Media and attribution
 
@@ -55,4 +61,4 @@ Media remains demonstration material. Independently confirm source-media and bea
 
 ## Validation
 
-JavaScript syntax, reproducible bundle build, desktop/mobile layouts at 390/768/1440 widths, plate transitions, details-to-booking flow, full-menu tabs, tasting hover, WebGL cellar selection and drag, film playback, navigation, FAQ reduced-motion behaviour, opt-in music playback, mute, volume, effects preferences and silent reload were checked in Chromium. Validation demonstrates working interactions, not pixel identity with the reference videos.
+JavaScript syntax, reproducible bundle build, desktop/mobile layouts at 390/768/1440 widths, plate transitions, details-to-booking flow, full-menu tabs, tasting hover, WebGL cellar selection and drag, film playback, navigation, FAQ reduced-motion behaviour, opt-in music playback, mute, volume, effects preferences and silent reload were checked in Chromium. Social demo-to-booking flow, future configured social links, visible water rendering, touch scrolling, non-WebGL fallback, reduced motion and mobile floating-control separation were also verified. Validation demonstrates working interactions, not pixel identity with the reference videos.
