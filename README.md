@@ -1,37 +1,56 @@
-# EMBER & TABLE — reference reconstruction
+# KENNY KITCHEN
 
-Restaurant concept rebuilt around the supplied BikeBear recording. Includes a scroll-scrubbed bear turn, horizontal oversized title, expanding silhouette transition, WebGL close-up camera, looping bear-bomb interaction, hover menu rows, food/video portfolio, inset navigation, FAQ and reservation-intent demo. All runtime assets are local.
+A fictional contemporary fine-dining restaurant demo combining the four supplied visual references. Uses an oxblood / charcoal / warm ivory / muted champagne palette, local photographic-style media, English editorial typography and Chinese supporting copy. No real business address, awards, reviews, opening hours or booking service are claimed.
 
-## Run and develop
+## Run
 
 Node.js 20.11+ (validated on Node 24).
 
 ```sh
-npm ci --cache /tmp/ember-npm-cache --no-audit --no-fund
+npm ci --cache /tmp/kenny-npm-cache --no-audit --no-fund
 npm run build:scene
 npm run check
 npm run dev
 ```
 
-Port defaults to 3000 (`PORT` overrides it). The already-bundled site can also be served as static files without Node dependencies. This workspace is isolated; use the existing checkout without a new Git worktree unless requested. WebGL has a Lottie fallback. Reduced-motion preferences disable scroll scrubbing and autoplay.
+Default port 3000, overridden with `PORT`. This workspace is already isolated: use the existing checkout without a Git worktree unless requested. Built files can also be served statically. GitHub Pages workflow rebuilds the pinned Three.js bundle and publishes `index.html`, `app.js`, `style.css` and `assets/`.
 
-`scene-source.js` builds to `assets/bear/scene.js` with pinned Three.js and esbuild dependencies. Runtime GLTF Draco decoder files are local. The GitHub Pages workflow rebuilds the bundle and publishes static files, not source/development files. Publication requires Pages source `GitHub Actions`.
+## Reference mapping
 
-## Fidelity and remaining differences
+1. Freshly food carousel (7.67 s): oversized food names behind a floating plate, animated decorative ingredients, coordinated lateral plate/title transitions, manual controls, swipe, optional autoplay and slide-specific background colours. Rebuilt using three new western dishes.
+2. Ciao Energy 3D experience (40.83 s): circular product arrangement, floating selected product, metallic rings, drag/arrow selection, scroll-driven close-up and rotation. Rebuilt as five custom Kenny-labelled wine bottles with procedural geometry/materials in Three.js. These are concept labels, not real bottled products.
+3. BikeBear (61.97 s): original banner turn Lottie and model, large horizontal typography, silhouette reveal, hover rows and inset navigation. Retains the bear while adapting the surrounding composition and colours to the restaurant. Camera paths, timing and geometry of the combined layout are reconstructed.
+4. Uptown Dumpling restaurant (100.67 s): cinematic restaurant film, serif/italic editorial headings, restrained cream layouts, menu, interior imagery, FAQ and reservation experience. Rebuilt for western fine dining.
 
-The original banner Lottie, bomb Lottie, bear GLB, matcap images and menu-hand artwork were found in public reference repositories. Opening turn frames and bomb art use those assets directly. Camera paths, scroll timing, fist-bump arms, typography and responsive layout are reconstructed from the 628×304 recording. The available GLB has its own fixed pose; it does not reproduce every pose visible in the recording. Food imagery, restaurant film, text and interactive menu content intentionally replace agency content. The film contains dining footage and is not the supplied website screen recording. Do not describe this as a pixel-identical reconstruction of all pages and animations.
+This is a fusion of the selected visual and interaction mechanisms, not a frame-identical reproduction of four separate websites or their entire page sets. Food, wine objects, brand, copy, palette and combined sequence intentionally differ. Uploaded recordings are reference material; they are not used as restaurant footage.
 
-## Content and media sources
+## Features and interaction
 
-- Bear banner Lottie, BEWARE artwork and animated logo: `tanphat14t/BikeBearDemo` (matching the reference's `banner-bear.json`).
-- Bear model, matcaps, bomb Lottie, menu-hand artwork: `muhammadilyaskhandev/bikebear.com`, archived paths under `www.bikebear.com.my/wp-content/`.
-- Original design/reference: BikeBear, `bikebear.com.my`. Source website returned HTTP 403 for most direct assets; public repository copies supplied the assets above. Public availability is not a commercial-use license; confirm original artwork/media permissions before commercial launch.
-- Food photos: `codewithsadee/grilli`, `hero-slider-{1,2,3}.jpg`; salmon crop, dining film and film poster: `adrianhajdin/project_modern_ui_ux_restaurant`, `welcome.png` and `meal.mp4`. Confirm original media rights before commercial launch.
-- Archivo Black: Google Fonts, SIL Open Font License, bundled with `assets/ArchivoBlack-OFL.txt`.
-- Three.js / Draco and Lottie: retain vendor license notices in `assets/bear/`.
+- Three coordinated hero dishes, manual buttons, swipe, pause/resume autoplay.
+- Silent cinematic dining, cooking and cocktail clips; user-initiated film dialogs with native controls.
+- Food details and full menu with accessible keyboard-operated category tabs.
+- Hover/touch tasting rows, navigation overlay with focus management and FAQ accordion.
+- Five interactive 3D wine bottles, arrows/dots/drag/raycast selection, scroll zoom and motion pause. Static fallback if WebGL is unavailable.
+- Original bear turn controlled by scroll, local Draco-decoded model close-up and brand-colour mask.
+- Local reservation-intent form with validation. No network submission, personal-data persistence or actual reservation.
+- Reduced-motion mode disables automatic carousel, floating motion, scroll pin durations and background video playback. Offscreen videos and inactive 3D rendering are paused.
 
-All brand, location, opening-hour, menu and price details are illustrative. Images are styling references. Reservation form is a local demo: no server submission, no personal data storage, no booking confirmation. Connect an actual reservation provider and replace placeholders before accepting customers.
+## Media and attribution
+
+All runtime images, videos, fonts, libraries, models and decoders are hosted locally.
+
+- `assets/kenny/tasting-plates.png`: AI-generated transparent triptych of steak, salmon and truffle tortellini, created for this demo. Equal thirds are displayed through CSS sprite positioning.
+- `assets/kenny/room.png`: AI-generated fine-dining concept interior. Not a photograph of an actual Kenny Kitchen location.
+- `assets/kenny/chef-story.jpg`: restaurant interior reference from `codewithsadee/grilli/assets/images/about-banner.jpg`.
+- Dining film/poster: `adrianhajdin/project_modern_ui_ux_restaurant/src/assets/meal.mp4`, silently transcoded.
+- Cocktail film/leaves: `adrianhajdin/gsap_cocktails/public/videos/output.mp4`, `public/images/hero-left-leaf.png`, `public/images/hero-right-leaf.png`. Film silently transcoded for the web.
+- Cooking film: `MathF94/freshly-restaurant/ressources/cooking.mp4`, 20-second silent excerpt from the public reference copy.
+- Bear artwork/model: see `assets/bear/ASSET-SOURCES.txt`. Original BikeBear artwork is retained at the user's request. Public copies do not establish a verified commercial-use license.
+- Cormorant Garamond and Manrope: Google Fonts, SIL OFL (license files in `assets/kenny/`). Archivo Black: `assets/ArchivoBlack-OFL.txt`.
+- Three.js, Draco and Lottie license notices retained in `assets/bear/`.
+
+Media remains demonstration material. Independently confirm source-media and bear-artwork commercial rights before commercial use. The user explicitly described Kenny Kitchen as an invented demo name.
 
 ## Validation
 
-Browser checks cover bear loading, 3D model decoding/rendering, menu hover/touch selection, dish details to booking, valid reservation intent, film playback, navigation, FAQ, and no horizontal overflow at 390/768/1440px. JavaScript syntax and scene bundle build are checked. These are functional checks, not proof of exact visual identity with the reference.
+JavaScript syntax, reproducible bundle build, desktop/mobile layouts at 390/768/1440 widths, plate transitions, details-to-booking flow, full-menu tabs, tasting hover, WebGL cellar selection and drag, film playback, navigation, FAQ and reduced-motion behaviour were checked in Chromium. Validation demonstrates working interactions, not pixel identity with the reference videos.

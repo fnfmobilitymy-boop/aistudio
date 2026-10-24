@@ -1,0 +1,17 @@
+KENNY KITCHEN DEMO — media provenance (2026-10-24)
+
+AI-generated for this demo:
+- tasting-plates.png: overhead three-dish transparent sprite (filet mignon, salmon, tortellini).
+- room.png: fictional fine-dining interior matching burgundy / ivory / walnut / brass palette.
+
+Public source copies:
+- chef-story.jpg: https://github.com/codewithsadee/grilli/blob/master/assets/images/about-banner.jpg
+- bar.mp4, bar-poster.jpg: derived from https://github.com/adrianhajdin/gsap_cocktails/blob/main/public/videos/output.mp4
+- leaf-left.png, leaf-right.png: hero-left-leaf.png / hero-right-leaf.png in the same repository's public/images/.
+- kitchen.mp4, kitchen-poster.jpg: 20-second excerpt of https://github.com/MathF94/freshly-restaurant/blob/main/ressources/cooking.mp4
+- ../dining.mp4 and ../film-poster.jpg: derived from https://github.com/adrianhajdin/project_modern_ui_ux_restaurant/blob/main/src/assets/meal.mp4
+
+Font licenses: CormorantGaramond-OFL.txt, Manrope-OFL.txt, ../ArchivoBlack-OFL.txt.
+Bear and library sources: ../bear/ASSET-SOURCES.txt.
+
+Assets are used for this fictional, user-requested demonstration. Public repository availability alone is not confirmation of original media commercial rights. No supplied website screen recording is embedded as restaurant footage.

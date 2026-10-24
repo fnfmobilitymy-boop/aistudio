@@ -1,11 +1,11 @@
 {
-  "name": "ember-table",
-  "version": "1.0.0",
+  "name": "kenny-kitchen",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "node server.mjs",
     "start": "node server.mjs",
-    "check": "node --check app.js && node --check server.mjs",
+    "check": "node --check app.js && node --check scene-source.js && node --check server.mjs",
     "build:scene": "esbuild scene-source.js --bundle --minify --format=esm --outfile=assets/bear/scene.js"
   },
   "type": "module",
