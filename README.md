@@ -19,7 +19,7 @@ Default port 3000, overridden with `PORT`. This workspace is already isolated: u
 
 1. Freshly food carousel (7.67 s): oversized food names behind a floating plate, animated decorative ingredients, coordinated lateral plate/title transitions, manual controls, swipe, optional autoplay and slide-specific background colours. Rebuilt using three new western dishes.
 2. Ciao Energy 3D experience (40.83 s): circular product arrangement, floating selected product, metallic rings, drag/arrow selection, scroll-driven close-up and rotation. Rebuilt as five custom Kenny-labelled wine bottles with procedural geometry/materials in Three.js. These are concept labels, not real bottled products.
-3. BikeBear (61.97 s): original banner turn Lottie and model, large horizontal typography, silhouette reveal, hover rows and inset navigation. Retains the bear while adapting the surrounding composition and colours to the restaurant. Camera paths, timing and geometry of the combined layout are reconstructed.
+3. BikeBear (61.97 s): large horizontal typography, reveal transition, hover rows and inset navigation. The earlier bear character has now been replaced throughout by a generated beef Wellington cutout with floating, scrolling rotation and a photographic close-up. No Wellington animation or model is loaded or included in the deployment.
 4. Uptown Dumpling restaurant (100.67 s): cinematic restaurant film, serif/italic editorial headings, restrained cream layouts, menu, interior imagery, FAQ and reservation experience. Rebuilt for western fine dining.
 
 This is a fusion of the selected visual and interaction mechanisms, not a frame-identical reproduction of four separate websites or their entire page sets. Food, wine objects, brand, copy, palette and combined sequence intentionally differ. Uploaded recordings are reference material; they are not used as restaurant footage.
@@ -31,7 +31,7 @@ This is a fusion of the selected visual and interaction mechanisms, not a frame-
 - Food details and full menu with accessible keyboard-operated category tabs.
 - Hover/touch tasting rows, navigation overlay with focus management and FAQ accordion.
 - Five interactive 3D wine bottles, arrows/dots/drag/raycast selection, scroll zoom and motion pause. Static fallback if WebGL is unavailable.
-- Original bear turn controlled by scroll, local Draco-decoded model close-up and brand-colour mask.
+- Floating beef Wellington, scroll-controlled rotation/iris close-up, matching navigation artwork and an interactive Wellington dish detail. This is animated photographic artwork, not a rigged 3D food model.
 - WhatsApp, Facebook and Instagram floating brand icons. They open a clearly labelled demo contact panel until real accounts are supplied; see `assets/kenny/social-links.json`.
 - Transparent water-height simulation under pointer movement and finger swipes, falling droplets / expanding rings on tap, optional synthesized water sounds, a Canvas 2D fallback, reduced-motion handling and no interception of scrolling/clicks.
 - Local reservation-intent form with validation. No network submission, personal-data persistence or actual reservation.
@@ -53,11 +53,11 @@ All runtime images, videos, fonts, libraries, models and decoders are hosted loc
 - Dining film/poster: `adrianhajdin/project_modern_ui_ux_restaurant/src/assets/meal.mp4`, silently transcoded.
 - Cocktail film/leaves: `adrianhajdin/gsap_cocktails/public/videos/output.mp4`, `public/images/hero-left-leaf.png`, `public/images/hero-right-leaf.png`. Film silently transcoded for the web.
 - Cooking film: `MathF94/freshly-restaurant/ressources/cooking.mp4`, 20-second silent excerpt from the public reference copy.
-- Bear artwork/model: see `assets/bear/ASSET-SOURCES.txt`. Original BikeBear artwork is retained at the user's request. Public copies do not establish a verified commercial-use license.
+- `assets/kenny/beef-wellington.png`: AI-generated transparent Wellington cutout created for the requested character replacement. All earlier bear art, model, Lottie player and Draco runtime files have been removed from the current site.
 - Cormorant Garamond and Manrope: Google Fonts, SIL OFL (license files in `assets/kenny/`). Archivo Black: `assets/ArchivoBlack-OFL.txt`.
-- Three.js, Draco and Lottie license notices retained in `assets/bear/`.
+- Three.js license retained in `assets/kenny/THREE-LICENSE.txt`. Wine scene bundle: `assets/kenny/cellar-scene.js`.
 
-Media remains demonstration material. Independently confirm source-media and bear-artwork commercial rights before commercial use. The user explicitly described Kenny Kitchen as an invented demo name.
+Media remains demonstration material. Independently confirm remaining third-party source-media commercial rights before commercial use. The user explicitly described Kenny Kitchen as an invented demo name.
 
 ## Validation
 
