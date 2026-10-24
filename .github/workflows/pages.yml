@@ -18,11 +18,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - name: Build local 3D bundle
+        run: |
+          npm ci --no-audit --no-fund
+          npm run build:scene
+          npm run check
       - name: Prepare static website
         run: |
           mkdir -p _site/assets
           cp index.html style.css app.js _site/
-          cp assets/*.jpg assets/*.ttf assets/dining.mp4 _site/assets/
+          cp -R assets/. _site/assets/
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

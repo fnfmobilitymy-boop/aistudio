@@ -1,0 +1,6 @@
+Reference animation/artwork: BikeBear, bikebear.com.my.
+Banner animation source: https://github.com/tanphat14t/BikeBearDemo/tree/main/assets
+Model, material maps, bomb animation and hand artwork source: https://github.com/muhammadilyaskhandev/bikebear.com/tree/main/www.bikebear.com.my/wp-content
+Downloaded 2026-10-24. These public copies do not include an independently verified commercial artwork license. Check permission with original rights holder before commercial use.
+Lottie library: airbnb/lottie-web (MIT; see LOTTIE-LICENSE.txt).
+Three.js and Draco distribution: three@0.160.1 (see THREE-LICENSE.txt and DRACO-LICENSE.txt).
