@@ -33,12 +33,14 @@ This is a fusion of the selected visual and interaction mechanisms, not a frame-
 - Five interactive 3D wine bottles, arrows/dots/drag/raycast selection, scroll zoom and motion pause. Static fallback if WebGL is unavailable.
 - Original bear turn controlled by scroll, local Draco-decoded model close-up and brand-colour mask.
 - Local reservation-intent form with validation. No network submission, personal-data persistence or actual reservation.
+- Opt-in background music: an original 52-second piano/bass/brush lounge loop, subtle synthesized interaction cues, mute, volume and effects controls. No audio starts before the user enables it; playback pauses in background tabs. Only volume/effect preferences are stored locally, never automatic sound consent.
 - Reduced-motion mode disables automatic carousel, floating motion, scroll pin durations and background video playback. Offscreen videos and inactive 3D rendering are paused.
 
 ## Media and attribution
 
 All runtime images, videos, fonts, libraries, models and decoders are hosted locally.
 
+- `assets/kenny/kenny-lounge.mp3`: original procedural lounge composition, rendered from `scripts/create-ambience.py` (NumPy + ffmpeg are only needed to regenerate it). UI cues are synthesized with Web Audio; no third-party music recording is used. Existing restaurant video files remain silent.
 - `assets/kenny/tasting-plates.png`: AI-generated transparent triptych of steak, salmon and truffle tortellini, created for this demo. Equal thirds are displayed through CSS sprite positioning.
 - `assets/kenny/room.png`: AI-generated fine-dining concept interior. Not a photograph of an actual Kenny Kitchen location.
 - `assets/kenny/chef-story.jpg`: restaurant interior reference from `codewithsadee/grilli/assets/images/about-banner.jpg`.
@@ -53,4 +55,4 @@ Media remains demonstration material. Independently confirm source-media and bea
 
 ## Validation
 
-JavaScript syntax, reproducible bundle build, desktop/mobile layouts at 390/768/1440 widths, plate transitions, details-to-booking flow, full-menu tabs, tasting hover, WebGL cellar selection and drag, film playback, navigation, FAQ and reduced-motion behaviour were checked in Chromium. Validation demonstrates working interactions, not pixel identity with the reference videos.
+JavaScript syntax, reproducible bundle build, desktop/mobile layouts at 390/768/1440 widths, plate transitions, details-to-booking flow, full-menu tabs, tasting hover, WebGL cellar selection and drag, film playback, navigation, FAQ reduced-motion behaviour, opt-in music playback, mute, volume, effects preferences and silent reload were checked in Chromium. Validation demonstrates working interactions, not pixel identity with the reference videos.
