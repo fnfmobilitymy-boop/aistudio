@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "node server.mjs",
     "start": "node server.mjs",
-    "check": "node --check app.js && node --check sound.js && node --check interactions.js && node --check scene-source.js && node --check server.mjs",
+    "check": "node --check app.js && node --check language.js && node --check sound.js && node --check interactions.js && node --check scene-source.js && node --check server.mjs",
     "build:scene": "esbuild scene-source.js --bundle --minify --format=esm --outfile=assets/kenny/cellar-scene.js"
   },
   "type": "module",

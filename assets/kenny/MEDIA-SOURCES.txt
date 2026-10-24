@@ -24,3 +24,12 @@ Audio added 2026-10-24:
 Wellington update:
 - beef-wellington.png: AI-generated transparent beef Wellington, used in navigation, scroll feature and dish detail.
 - Motion is photographic cutout animation (CSS/Web Animations); the wine carousel remains procedural Three.js.
+
+Real bottle image update:
+Source repository: https://github.com/techiecoder2079/Wine-Shop-Website/tree/main/images/product
+- hunnu-premium.png: product-6.png
+- reeves-point-chardonnay.png: product-4.png
+- classic-semillon-chardonnay.png: product-5.png
+- brut-cuvee.png: product-2.png
+- trilogy-brut.png: product-8.png
+Original PNGs and bottle labels retained, with display UV bounds in app.js. These are real product packshots rather than invented Kenny labels. Public repository availability does not establish a verified commercial media license.
