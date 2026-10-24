@@ -40,12 +40,3 @@ jobs:
       - name: Publish
         id: deployment
         uses: actions/deploy-pages@v4
-      - name: Enforce HTTPS when the domain certificate is approved
-        continue-on-error: true
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          kenny_https_ready=$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq '.cname != null and .https_certificate.state == "approved" and .https_enforced == false')
-          if [ "$kenny_https_ready" = "true" ]; then
-            gh api "repos/${GITHUB_REPOSITORY}/pages" --method PUT --field https_enforced=true --silent
-          fi
